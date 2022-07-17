@@ -9,7 +9,10 @@ class Reporter(object):
     Documentation for class Reporter
     """
 
+    findings = []
+
     def __init__(self):
         super(Reporter, self).__init__()
         
-    
+    def report_finding(self, protocol, domain, user, hostname, reason, fix):
+        pass

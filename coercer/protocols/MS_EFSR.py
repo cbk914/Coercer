@@ -101,6 +101,39 @@ class MS_EFSR(RPCProtocol):
     auth_type = RPC_C_AUTHN_WINNT
     auth_level = RPC_C_AUTHN_LEVEL_PKT_PRIVACY
 
+    data = {
+        "EfsRpcOpenFileRaw": {
+            "opnum": 0,
+            "msdocs_url": "https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-efsr/ccc4fb75-1c86-41d7-bbc4-b278ec13bfb8",
+            "patch": """https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-36942"""
+        },
+        "EfsRpcEncryptFileSrv": {
+            "opnum": 4,
+            "msdocs_url": "https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-efsr/0d599976-758c-4dbd-ac8c-c9db2a922d76",
+            "patch": """"""
+        },
+        "EfsRpcDecryptFileSrv": {
+            "opnum": 5,
+            "msdocs_url": "https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-efsr/043715de-caee-402a-a61b-921743337e78",
+            "patch": """"""
+        },
+        "EfsRpcQueryUsersOnFile": {
+            "opnum": 6,
+            "msdocs_url": "https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-efsr/a058dc6c-bb7e-491c-9143-a5cb1f7e7cea",
+            "patch": """"""
+        },
+        "EfsRpcQueryRecoveryAgents": {
+            "opnum": 7,
+            "msdocs_url": "https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-efsr/cf759c00-1b90-4c33-9ace-f51c20149cea",
+            "patch": """"""
+        },
+        "EfsRpcFileKeyInfo": {
+            "opnum": 12,
+            "msdocs_url": "https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-efsr/6813bfa8-1538-4c5f-982a-ad58caff3c1c",
+            "patch": """"""
+        }
+    }
+
     def EfsRpcOpenFileRaw(self, listener, max_retries=3):
         # Microsoft docs: https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-efsr/ccc4fb75-1c86-41d7-bbc4-b278ec13bfb8
         # Finding credits: @topotam77
